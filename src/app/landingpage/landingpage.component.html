@@ -1,0 +1,14 @@
+<div class="campus">
+  <div class="row">
+    <div *ngFor="let doctor of filteredDoctors" class="campus-col" >
+
+      <img [src]="doctor.picture" alt="{{doctor.name}}">
+      <div class="layer">
+    
+        <h2>{{ doctor.specialty }}</h2>
+        <h3>{{ doctor.name }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+

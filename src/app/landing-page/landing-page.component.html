@@ -1,0 +1,43 @@
+<!-- landing-page.component.html -->
+<div class="landing-page">
+  <app-header></app-header>
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="hero-section">
+      <h1>Welcome to eHealth</h1>
+      <p>Your health, our priority. Find doctors and schedule appointments online.</p>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search doctors by name, specialty, etc." [(ngModel)]="searchQuery" />
+      <button (click)="onSearch()">Search</button>
+    </div>
+
+    <div class="specialties-container">
+      <div class="specialty-list">
+        <h3>Specialties</h3>
+        <ul>
+          <li *ngFor="let specialty of specialties" (click)="onSelectSpecialty(specialty)">
+            {{ specialty }}
+          </li>
+        </ul>
+      </div>      
+    </div>
+
+    <!-- Top Doctors Section -->
+    <div div class="top-doctors-container">
+      <h2>Top Doctors</h2>
+      <div class="top-doctors mb-5">
+        <div *ngFor="let doctor of doctors" class="doctor-card">
+          <h4>{{ doctor.name }}</h4>
+          <p>{{ doctor.specialty }}</p>
+          <button>Book Appointment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>
